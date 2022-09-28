@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<head>
+<meta charset="UTF-8">
+<title>Budget App</title>
+<link href='budgetApp.css' rel='stylesheet'> 
+<style>
+</style>
+</head>
+<body id="body">
+  <header>
+    <h1>Budget</h1>
+  </header>
+
+  <div id="masterContainer">
+
+    <div id="incomeContainer">
+      <header id='incomeHeader'>
+        <h2>Income</h2>
+      </header>
+
+      <h3>Add Income Type:</h3>
+      <form class="categoryAdder">
+        <input type="text" id='incomeCategory' class='textbox' placeholder='E.g., "Paycheck"'>
+        <input type="submit" value="Add" id="incomeAdder">
+      </form>
+
+      <ul id="incomeCategories">
+      </ul>
+
+      <ul id="incomeList">
+      </ul>
+    </div>
+
+    <div id="expensesContainer">
+      <header id='expenseHeader'>
+        <h2>Expenses</h2>
+      </header>
+
+      <h3>Add Expense Type:</h3>
+      <form class="categoryAdder">
+        <input type="text" id='expenseCategory' class='textbox' placeholder='E.g., "Mortgage"'>
+        <input type="submit" value="Add" id="expenseAdder" >
+      </form>
+
+      <ul id="expenseCategories">
+      </ul>
+
+      <ul id="expenseList">
+      </ul>
+    </div>
+  </div>
+  <div id="moneyContainer">
+    <p id="money" class='text'>Money Remaining: </p>
+  </div>
+    <script src="budgetApp.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 
+
+  "Current Money" Input Box -> "Current Money" Output
+
+  "Expenses" UL -> Each LI has a name and numeric value and a delete button that adds to "Current Money"
+
+  "Income" UL -> Each LI has a name and numeric value and a delete button that subtracts from "Current Money"
+
+  "Total Expenses" Output
+
+  "Total Income" Output
+
+  "Add Expense Category" Button -> Creates "Expense Category" Field and Update Button
+
+  "Add Income Category" Button -> Creates "Income Category" Field and Update Button
+
+  "Update" Button -> Subtracts expenses and adds income to "Current Money" numerical value, 
+
+
+
+-->
