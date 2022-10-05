@@ -49,18 +49,21 @@ function addIncomeCategory(e) {
     var incomeText = document.createElement('input');
     incomeText.type = 'text';
     incomeText.classList.add('incomeTextbox');
+    incomeText.id = `${incomeCategoryName}Category`
     incomeCategory.appendChild(incomeText);
     
     var incomeSubmit = document.createElement('input');
     incomeSubmit.type = 'submit';
     incomeSubmit.value = 'Update';
     incomeSubmit.className = 'incomeCatUpdate'; 
+    incomeSubmit.id = `${incomeCategoryName}Update`;
     incomeCategory.appendChild(incomeSubmit);
     
     //Create delete button element
     var deleteIncomeCat = document.createElement('button');
     deleteIncomeCat.className = 'incomeCatDelete';
     deleteIncomeCat.innerText = 'Delete';
+    deleteIncomeCat.id = `${incomeCategoryName}Delete`;
     
     //Append delete button to li
     incomeCategory.appendChild(deleteIncomeCat);
@@ -96,17 +99,20 @@ function addExpenseCategory(e){
     var expenseText = document.createElement('input');
     expenseText.type = 'text';
     expenseText.classList.add('expenseTextbox');
+    expenseText.id = `${expenseCategoryName}Category`
     expenseCategory.appendChild(expenseText);
     
     var expenseSubmit = document.createElement('input');
     expenseSubmit.type = 'submit';
     expenseSubmit.value = 'Update';
     expenseSubmit.className = 'expenseCatUpdate'; 
+    expenseSubmit.id = `${expenseCategoryName}Update`;
     expenseCategory.appendChild(expenseSubmit);
     
     var deleteExpenseCat = document.createElement('button');
     deleteExpenseCat.className = 'expenseCatDelete';
     deleteExpenseCat.innerText = 'Delete';
+    deleteExpenseCat.id = `${expenseCategoryName}Delete`;
     expenseCategory.appendChild(deleteExpenseCat);
     
     expenseCats.appendChild(expenseLi);
@@ -141,11 +147,13 @@ function incomeUpdate(e) {
             var newIncome = document.createElement('li');
             newIncome.classList.add('income');
             newIncome.classList.add('text');
+            newIncome.id = `${incomeType}Income`;
             newIncome.textContent = `${incomeType} $${incomeAmount} `;
     
             var incomeDelete = document.createElement('button');
             incomeDelete.className = 'incomeDelete';
             incomeDelete.innerText = 'X';
+            incomeDelete.id = `${incomeType}IncomeDelete`
     
             newIncome.appendChild(incomeDelete);
     
@@ -154,6 +162,9 @@ function incomeUpdate(e) {
             // Update the money total
             totalMoney += incomeAmount;
             money.textContent = `Money Remaining: $${totalMoney}`;
+            if (!money.classList.contains('updatedMoney')) {
+                money.classList.add('updatedMoney');
+            }
 
         } else {
 
@@ -180,11 +191,13 @@ function expenseUpdate(e) {
             var newExpense = document.createElement('li');
             newExpense.classList.add('expense');
             newExpense.classList.add('text');
+            newExpense.id = `${expenseType}Expense`;
             newExpense.textContent = `${expenseType} $${expenseAmount} `;
     
             var expenseDelete = document.createElement('button');
             expenseDelete.className = 'expenseDelete';
             expenseDelete.innerText = 'X';
+            expenseDelete.id = `${expenseType}ExpenseDelete`;
     
             newExpense.appendChild(expenseDelete);
     
@@ -192,6 +205,9 @@ function expenseUpdate(e) {
     
             totalMoney -= expenseAmount;
             money.textContent = `Money Remaining: $${totalMoney}`;
+            if (!money.classList.contains('updatedMoney')) {
+                money.classList.add('updatedMoney');
+            }
 
         } else {
 
@@ -220,6 +236,9 @@ function deleteIncomeItem(e) {
         //Update the total
         totalMoney -= incomeAmount;
         money.textContent = `Money Remaining: $${totalMoney}`;
+        if (!money.classList.contains('updatedMoney')) {
+            money.classList.add('updatedMoney');
+        }
      }
 };
 
@@ -238,6 +257,9 @@ function deleteExpenseItem(e) {
         
         totalMoney += expenseAmount;
         money.textContent = `Money Remaining: $${totalMoney}`;
+        if (!money.classList.contains('updatedMoney')) {
+            money.classList.add('updatedMoney');
+        }
     }
 };
 
